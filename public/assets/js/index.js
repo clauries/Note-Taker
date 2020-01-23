@@ -1,4 +1,5 @@
-const apiRoutes = require("../../routes/apiRoutes")
+console.log("hello");
+//const apiRoutes = require("../../routes/apiRoutes")
 
 const $noteTitle = $(".note-title");
 const $noteText = $(".note-textarea");
@@ -24,6 +25,7 @@ const saveNote = function(note) {
     data: note,
     method: "POST"
   });
+  
 };
 
 // A function for deleting a note from the db
@@ -53,6 +55,7 @@ const renderActiveNote = function() {
 
 // Get the note data from the inputs, save it to the db and update the view
 const handleNoteSave = function() {
+  console.log("Note saved");
   const newNote = {
     title: $noteTitle.val(),
     text: $noteText.val()
@@ -134,7 +137,12 @@ const getAndRenderNotes = function() {
   });
 };
 
-$saveNoteBtn.on("click", handleNoteSave);
+// Debugging - getting error in console. Btn not working.
+// No console.logs appearing prob due to error. 
+// When error is resolved add handleNoteSave instead of anonymous function.
+$saveNoteBtn.on("click", ()=> {
+  console.log("clicked");
+});
 $noteList.on("click", ".list-group-item", handleNoteView);
 $newNoteBtn.on("click", handleNewNoteView);
 $noteList.on("click", ".delete-note", handleNoteDelete);
