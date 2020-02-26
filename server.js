@@ -1,7 +1,7 @@
 // DEPENDENCIES
 const express = require("express");
 const path = require("path");
-const mysql = require("mysql");
+const bodyParser = require("body-parser");
 
 // EXPRESS CONFIGURATION
 
@@ -9,11 +9,12 @@ const mysql = require("mysql");
 const app = express();
 
 // Sets an initial port.
-var PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 // Sets up the Express app to handle data parsing
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static("public"));
 
 
 // ROUTER
