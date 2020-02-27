@@ -5,6 +5,8 @@ A node app using an Express server & a json file to save personal notes.
 
 <img src="./public/assets/img/notetaker.png" alt="App Image"/>
 
+#### [Deployed App](https://evening-ocean-95695.herokuapp.com/)
+
 ## Concept
 AS A user, I want to be able to write and save notes
 I WANT to be able to delete notes I've written before
